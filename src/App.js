@@ -18,15 +18,17 @@ App.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-const style = {
+const style = theme => ({
   container: {
     flexGrow: 1
   },
   bar: {
     backgroundColor: '#0a1030',
     flexGrow: 1,
-    border: '1px solid red'
+  },
+  btn: {
+    margin: theme.spacing.unit
   }
-}
+}) 
 
 export default withStyles(style)(App);

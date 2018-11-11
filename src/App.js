@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import Navbar from './components/navbar'
 import Hero from './components/hero';
+import Menu from './components/menu'
 
 const App = props => {
   const { classes } = props
   // const { container, bar } = classes
+  const [open, setOpen] = useState(false)
+
+
 
   return(
     <div>
-      <Navbar {...classes}/>
+      <Navbar {...classes} toggleDrawer={()=> setOpen(!open)}/>
       <Hero/>
       <Hero/>
+      <Menu open={open} toggleDrawer={()=> setOpen(!open)}/>
     </div>
   )
 }
